@@ -77,8 +77,15 @@
                         <div class="nav-b hidden-xs">
                            <div class="nav-box">
                               <ul>
-                                 <li><a href="howitworks.html">How it works</a></li>
-                                 <li><a href="about-us.html">Chamb for Business</a></li>
+                                 {{-- If user is an admin, show dashboard link --}}
+                                 @if(auth()->check() && auth()->user()->is_admin == 1)
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="about-us.html">Chamb for Business</a></li>
+                                 @else
+                                    <li><a href="howitworks.html">How it works</a></li>
+                                    <li><a href="about-us.html">Chamb for Business</a></li>
+                                 @endif
+                                 
                               </ul>
                            </div>
                         </div>
