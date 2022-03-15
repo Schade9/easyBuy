@@ -16,12 +16,14 @@ use App\Http\Controllers\CategoriesController;
 */
 
 Route::get('/', function () {
-    return view('categories');
+    return view('home1');
 });
 
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 //Route::get('/categories', [HomeController::class, 'categories'])->name('categories');
 Route::resource('categories', CategoriesController::class);

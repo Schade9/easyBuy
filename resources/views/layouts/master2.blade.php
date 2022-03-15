@@ -29,14 +29,14 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.html">
+						<a class="sidebar-link" href="{{ route('dashboard') }}">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+						<a class="sidebar-link" href="{{ route('categories.index') }}">
+              <i class="align-middle" data-feather="package"></i> <span class="align-middle">Categories</span>
             </a>
 					</li>
 
@@ -325,7 +325,8 @@
 		</div>
 	</div>
 
-	<script src="dash/js/app.js"></script>
+	<script src="{{ URL::asset('assets/dash/js/app.js') }}"></script>
+	<link href="{{ URL::asset('assets/dash/css/app.css') }}" rel="stylesheet">
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
