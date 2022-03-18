@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use DB;
 
 class CategoriesController extends Controller
 {
@@ -14,7 +15,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('categories.index');
+        $categories = DB::table('categories')->get();
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -62,7 +64,7 @@ class CategoriesController extends Controller
      */
     public function show(Category $category)
     {
-        return view('category.show',compact('category'));
+        return view('categories.show',compact('category'));
     }
 
     /**
@@ -73,7 +75,7 @@ class CategoriesController extends Controller
      */
     public function edit(Category $category)
     {
-        return view ('post.edit',compact('category'));
+        return view ('categories.edit',compact('category'));
     }
 
     /**
@@ -114,7 +116,12 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
-        $category->delete();
+        $id = $category->id;
+        DB::table('categories')->where('id', $id)->delete();
+        // $id = $category->id;
+        // $category = Category::find($id);
+        // $category->delete();
         return redirect()->route('categories.index')->with('success','Category deleted successfully');;
     }
 }
+  

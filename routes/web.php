@@ -26,6 +26,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 //Route::get('/categories', [HomeController::class, 'categories'])->name('categories');
-Route::resource('categories', CategoriesController::class);
+Route::resource('categories', CategoriesController::class)->middleware('is_admin');
 
 Route::get('/admin', [HomeController::class, 'admin'])->name('admin')->middleware('is_admin');
