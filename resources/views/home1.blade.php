@@ -12,8 +12,8 @@
                </div>
                <div class="modal-body">
                   <ul>
-                     <li><a href="#"><img src="assets/images/flag-up-1.png" alt="" /> United States</a></li>
-                     <li><a href="#"><img src="assets/images/flag-up-2.png" alt="" /> France </a></li>
+                     <li><a href="#"><img src="static/images/flag-up-1.png" alt="" /> United States</a></li>
+                     <li><a href="#"><img src="static/images/flag-up-2.png" alt="" /> France </a></li>
                   </ul>
                </div>
             </div>
@@ -42,9 +42,9 @@
                         <div class="col-sm-3">
                            <div class="form-sh">
                               <select class="selectpicker">
-                                 <option>Textiles</option>
-                                 <option>Furniture</option>
-                                 <option>Leather</option>
+                                 @foreach ($categories as $category)
+                                    <option>{{ $category->category }}</option>
+                                 @endforeach
                               </select>
                            </div>
                         </div>
@@ -56,11 +56,23 @@
                   </div>
                </div>
                <div class="row clearfix">
+                  @foreach ($categories as $category)
+                     <div class="col-lg-3 col-sm-6 col-md-3">
+                        <a href="productpage.html">
+                           <div class="box-img">
+                              <h4>{{ $category->category }}</h4>
+                              {{-- <img src="/images/categoryimages/{{ $category->imgpath }}'" alt="" /> --}}
+                              <img src="{{ url('images/'.$category->imgpath) }}" alt="img" />
+                           </div>
+                        </a>
+                     </div>
+                  @endforeach
+
                   <div class="col-lg-3 col-sm-6 col-md-3">
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="assets/images/product/1.png" alt="" />
+                           <img src="static/images/product/2.png" alt="" />
                         </div>
                      </a>
                   </div>
@@ -68,7 +80,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="assets/images/product/2.png" alt="" />
+                           <img src="static/images/product/4.png" alt="" />
                         </div>
                      </a>
                   </div>
@@ -76,47 +88,7 @@
                      <a href="productpage.html">
                         <div class="box-img">
                            <h4>Product</h4>
-                           <img src="assets/images/product/4.png" alt="" />
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-md-3">
-                     <a href="productpage.html">
-                        <div class="box-img">
-                           <h4>Product</h4>
-                           <img src="assets/images/product/5.png" alt="" />
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-md-3">
-                     <a href="productpage.html">
-                        <div class="box-img">
-                           <h4>Product</h4>
-                           <img src="assets/images/product/10.png" alt="" />
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-md-3">
-                     <a href="productpage.html">
-                        <div class="box-img">
-                           <h4>Product</h4>
-                           <img src="assets/images/product/11.png" alt="" />
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-md-3">
-                     <a href="productpage.html">
-                        <div class="box-img">
-                           <h4>Product</h4>
-                           <img src="assets/images/product/12.png" alt="" />
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-md-3">
-                     <a href="productpage.html">
-                        <div class="box-img">
-                           <h4>Product</h4>
-                           <img src="assets/images/product/13.png" alt="" />
+                           <img src="static/images/product/5.png" alt="" />
                         </div>
                      </a>
                   </div>
@@ -133,7 +105,7 @@
                <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.0s">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                        <img src="assets/images/xpann-icon.jpg" class="icon-small" alt="">
+                        <img src="static/images/xpann-icon.jpg" class="icon-small" alt="">
                         <h4>“Chamb” Your Business</h4>
                         <p>Grow easily with chamb. Create free account.
                            We help expanding your business easily.
@@ -144,7 +116,7 @@
                <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                        <img src="assets/images/create-icon.jpg" class="icon-small" alt="">
+                        <img src="static/images/create-icon.jpg" class="icon-small" alt="">
                         <h4>Create and add</h4>
                         <p>Grow easily with chamb. Create free account.
                            We help expanding your business easily.
@@ -155,7 +127,7 @@
                <div class="col-md-4 col-sm-6 wow fadeIn hidden-sm" data-wow-delay="0.4s">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                        <img src="assets/images/get-icon.jpg" class="icon-small" alt="">
+                        <img src="static/images/get-icon.jpg" class="icon-small" alt="">
                         <h4>Get inspired</h4>
                         <p>Grow easily with chamb. Create free account.
                            We help expanding your business easily.
@@ -171,7 +143,7 @@
             <div class="row">
                <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                   <div class="exciting_box f_pd">
-                     <img src="assets/images/exciting_img-01.jpg" class="icon-small" alt="" />
+                     <img src="static/images/exciting_img-01.jpg" class="icon-small" alt="" />
                      <h4>Explore <strong>exciting</strong> and exotic products
                         tailored to you.
                      </h4>
@@ -183,7 +155,7 @@
                </div>
                <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                   <div class="exciting_box l_pd">
-                     <img src="assets/images/exciting_img-02.jpg" class="icon-small" alt="" />
+                     <img src="static/images/exciting_img-02.jpg" class="icon-small" alt="" />
                      <h4><strong>List your products on</strong> chamb and grow connections.</h4>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -219,12 +191,12 @@
             </div>
             <div class="row">
                <div class="main-start-box">
-                  <div class="bg_img_left"><img src="assets/images/bg_img1.png" alt="#" /></div>
+                  <div class="bg_img_left"><img src="static/images/bg_img1.png" alt="#" /></div>
                   <div class="container">
                      <div class="buyer-box clearfix">
                         <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                            <div class="left-buyer">
-                              <img class="img-responsive" src="assets/images/creat_pro.png" alt="#" />
+                              <img class="img-responsive" src="static/images/creat_pro.png" alt="#" />
                            </div>
                         </div>
                         <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
@@ -246,7 +218,7 @@
                </div>
             </div>
             <div class="row">
-               <div class="bg_img_right"><img src="assets/images/bg_img1.png" alt="#" /></div>
+               <div class="bg_img_right"><img src="static/images/bg_img1.png" alt="#" /></div>
                <div class="main-start-box">
                   <div class="container">
                      <div class="supplier clearfix">
@@ -265,7 +237,7 @@
                         </div>
                         <div class="col-md-7 col-sm-6">
                            <div class="right-supplier">
-                              <img class="img-responsive" src="assets/images/supplier-pc-img.png" alt="#" />
+                              <img class="img-responsive" src="static/images/supplier-pc-img.png" alt="#" />
                            </div>
                         </div>
                      </div>
@@ -282,7 +254,7 @@
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
-                           <img src="assets/images/tr1.png" alt="#" />
+                           <img src="static/images/tr1.png" alt="#" />
                         </div>
                         <div class="prod-dit clearfix">
                            <div class="dit-t clearfix">
@@ -302,7 +274,7 @@
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
-                           <img src="assets/images/tr2.png" alt="#" />
+                           <img src="static/images/tr2.png" alt="#" />
                         </div>
                         <div class="prod-dit clearfix">
                            <div class="dit-t clearfix">
@@ -322,7 +294,7 @@
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
-                           <img src="assets/images/tr3.png" alt="#" />
+                           <img src="static/images/tr3.png" alt="#" />
                         </div>
                         <div class="prod-dit clearfix">
                            <div class="dit-t clearfix">
@@ -342,7 +314,7 @@
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
-                           <img src="assets/images/tr4.png" alt="#" />
+                           <img src="static/images/tr4.png" alt="#" />
                         </div>
                         <div class="prod-dit clearfix">
                            <div class="dit-t clearfix">
@@ -362,7 +334,7 @@
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
-                           <img src="assets/images/tr1.png" alt="#" />
+                           <img src="static/images/tr1.png" alt="#" />
                         </div>
                         <div class="prod-dit clearfix">
                            <div class="dit-t clearfix">
@@ -382,7 +354,7 @@
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
-                           <img src="assets/images/tr2.png" alt="#" />
+                           <img src="static/images/tr2.png" alt="#" />
                         </div>
                         <div class="prod-dit clearfix">
                            <div class="dit-t clearfix">
@@ -402,7 +374,7 @@
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
-                           <img src="assets/images/tr3.png" alt="#" />
+                           <img src="static/images/tr3.png" alt="#" />
                         </div>
                         <div class="prod-dit clearfix">
                            <div class="dit-t clearfix">

@@ -7,17 +7,17 @@
       <!--enable mobile device-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!--fontawesome css-->
-      <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+      <link rel="stylesheet" href="static/css/font-awesome.min.css">
       <!--bootstrap css-->
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="static/css/bootstrap.min.css">
       <!--animate css-->
-      <link rel="stylesheet" href="assets/css/animate-wow.css">
+      <link rel="stylesheet" href="static/css/animate-wow.css">
       <!--main css-->
-      <link rel="stylesheet" href="assets/css/style.css">
-      <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
-      <link rel="stylesheet" href="assets/css/slick.min.css">
+      <link rel="stylesheet" href="static/css/style.css">
+      <link rel="stylesheet" href="static/css/bootstrap-select.min.css">
+      <link rel="stylesheet" href="static/css/slick.min.css">
       <!--responsive css-->
-      <link rel="stylesheet" href="assets/css/responsive.css">
+      <link rel="stylesheet" href="static/css/responsive.css">
    </head>
    <body>
       <header id="header" class="top-head">
@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span> 
                         <span class="icon-bar"></span> 
                         </button>
-                        <a href="index.html" class="navbar-brand"><img src="assets/images/logo.png" alt="" /></a>
+                        <a href="{{ route('home') }}" class="navbar-brand"><img src="static/images/logo.png" alt="" /></a>
                      </div>
                      <form class="navbar-form navbar-left web-sh">
                         <div class="form">
@@ -57,7 +57,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                    </li>
+                                    </li> 
                                 @else
                                     <li><a href="{{ url('/login') }}">Login</a></li>
                                     <li><a class="custom-b" href="{{ url('/register') }}">Sign up</a></li>
@@ -69,8 +69,8 @@
                         <div class="help-r hidden-xs">
                            <div class="help-box">
                               <ul>
-                                 <li> <a data-toggle="modal" data-target="#myModal" href="#"> <span>Change</span> <img src="assets/images/flag.png" alt="" /> </a> </li>
-                                 <li> <a href="#"><img class="h-i" src="assets/images/help-icon.png" alt="" /> Help </a> </li>
+                                 <li> <a data-toggle="modal" data-target="#myModal" href="#"> <span>Change</span> <img src="static/images/flag.png" alt="" /> </a> </li>
+                                 <li> <a href="#"><img class="h-i" src="static/images/help-icon.png" alt="" /> Help </a> </li>
                               </ul>
                            </div>
                         </div>
@@ -186,7 +186,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-8">
-                     <p><img width="90" src="assets/images/logo.png" alt="#" style="margin-top: -5px;" /> All Rights Reserved. Company Name © 2018</p>
+                     <p><img width="90" src="static/images/logo.png" alt="#" style="margin-top: -5px;" /> All Rights Reserved. Company Name © 2018</p>
                   </div>
                   <div class="col-md-4">
                      <ul class="list-inline socials">
@@ -212,7 +212,7 @@
                         </li>
                      </ul>
                      <ul class="right-flag">
-                        <li><a href="#"><img src="assets/images/flag.png" alt="" /> <span>Change</span></a></li>
+                        <li><a href="#"><img src="static/images/flag.png" alt="" /> <span>Change</span></a></li>
                      </ul>
                   </div>
                </div>
@@ -220,13 +220,13 @@
          </div>
       </footer>
       <!--main js--> 
-      <script src="assets/js/jquery-1.12.4.min.js"></script> 
+      <script src="static/js/jquery-1.12.4.min.js"></script> 
       <!--bootstrap js--> 
-      <script src="assets/js/bootstrap.min.js"></script> 
-      <script src="assets/js/bootstrap-select.min.js"></script>
-      <script src="assets/js/slick.min.js"></script> 
-      <script src="assets/js/wow.min.js"></script>
+      <script src="static/js/bootstrap.min.js"></script> 
+      <script src="static/js/bootstrap-select.min.js"></script>
+      <script src="static/js/slick.min.js"></script> 
+      <script src="static/js/wow.min.js"></script>
       <!--custom js--> 
-      <script src="assets/js/custom.js"></script>
+      <script src="static/js/custom.js"></script>
    </body>
 </html>

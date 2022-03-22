@@ -33,7 +33,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h2>{{ $category->category }}</h2>
-                            <img class="card-img-top" src="public/categoryimages/{{ $category->imgpath }}'" alt="img"><br><br>
+                            <img class="card-img-top" src="{{ url('images/'.$category->imgpath) }}" height="533" width="800" alt="img"><br><br>
                             <div class="mb-1">
                                 <a href="{{ route('categories.edit', $category->id) }}"><button class="btn btn-primary"><i class="far fa-edit"></i> Edit</button></a>
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#defaultModalDanger_{{ $category->id }}"><i data-feather="trash-2"></i> Delete</button>
@@ -71,7 +71,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h2>Electronics</h2>
-                            <img class="card-img-top" src="{{ URL::asset('assets/dash/img/photos/unsplash-2.jpg') }}" alt="Unsplash"><br><br>
+                            <img class="card-img-top" src="{{ URL::asset('static/dash/img/photos/unsplash-2.jpg') }}" alt="Unsplash"><br><br>
                             <div class="mb-1">
                                 <a href=""><button class="btn btn-primary"><i class="far fa-edit"></i> Edit</button></a>
                                 <a href=""><button class="btn btn-danger"><i data-feather="trash-2"></i> Delete</button></a>

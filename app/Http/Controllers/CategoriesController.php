@@ -45,7 +45,7 @@ class CategoriesController extends Controller
         $input = $request->all();
 
         if($imgpath = $request->file('imgpath')) {
-            $imageDestinationPath = 'public/categoryimages';
+            $imageDestinationPath = 'images/';
             $categoryImage = date('YmdHis') . "." . $imgpath->getClientOriginalExtension();
             $imgpath->move($imageDestinationPath, $categoryImage);
             $input['imgpath'] = "$categoryImage";
@@ -95,7 +95,7 @@ class CategoriesController extends Controller
         $input = $request->all();
 
         if($imgpath = $request->file('imgpath')) {
-            $imageDestinationPath = 'public/categoryimages';
+            $imageDestinationPath = 'images/';
             $categoryImage = date('YmdHis') . "." . $imgpath->getClientOriginalExtension();
             $imgpath->move($imageDestinationPath, $categoryImage);
             $input['imgpath'] = "$categoryImage";

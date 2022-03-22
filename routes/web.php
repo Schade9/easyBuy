@@ -15,11 +15,13 @@ use App\Http\Controllers\CategoriesController;
 |
 */
 
-Route::get('/', function () {
-    return view('home1');
-});
+// Route::get('/', function () {
+//     return view('home1');
+// });
 
 Auth::routes();
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
